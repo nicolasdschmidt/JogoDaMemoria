@@ -1,0 +1,56 @@
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+/* back     4eacf4 0f76c6 */
+/* front    564be7 1c10bd*/
+
+.carta_front {
+    border: 2px solid #0f76c6;
+    border-radius: 10px;
+}
+
+.carta_back {
+    border: 2px solid #1c10bd;
+    border-radius: 10px;
+}
+
+#card1,
+#card2,
+#card3,
+#card4,
+#card5,
+#card6,
+#card7,
+#card8,
+#card9,
+#card10,
+#card11,
+#card12 {
+    margin: 7px;
+    width: 100px;
+    float: left;
+    display: block;
+    text-decoration: none;
+}
+
+#table {
+    width: 460px;
+    margin: 0 auto;
+    /* margin-top: 60px; */
+}
+
+.naoSelecionavel {
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+}
+
+#block {
+    position: absolute;
+    top: 10px;
+    width: 90%;
+    height: 90%;
+}
