@@ -6,7 +6,7 @@ $().ready(function () {
     var tempImagens = [];
 
     const img_min = 1;
-    const img_max = 7;
+    const img_max = 14;
 
     for (var i = img_min; i <= img_max; i++) {
         tempImagens.push(`${i}`);
@@ -223,6 +223,7 @@ $().ready(function () {
                 $(this).attr("src", `img/${imagens[i]}.png`);
                 console.log(`Carta ${i + 1}: anexada imagem ${imagens[i]}.png`);
             });
+            // o melhor jeito de virar as cartas em ordem com um intervalo é usando várias funções setTimeout ¯\_(ツ)_/¯
             setTimeout(() => {
                 $("#card1").flip(true);
                 setTimeout(() => {
