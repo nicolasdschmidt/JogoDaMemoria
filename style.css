@@ -6,13 +6,13 @@ body {
 /* front    564be7 1c10bd*/
 
 .carta_front {
-    border: 2px solid #0f76c6;
     border-radius: 10px;
+    width: 150px;
 }
 
 .carta_back {
-    border: 2px solid #1c10bd;
     border-radius: 10px;
+    width: 150px;
 }
 
 #card1,
@@ -28,14 +28,14 @@ body {
 #card11,
 #card12 {
     margin: 7px;
-    width: 100px;
+    width: 150px;
     float: left;
     display: block;
     text-decoration: none;
 }
 
 #table {
-    width: 460px;
+    width: 660px;
     margin: 0 auto;
     /* margin-top: 60px; */
 }

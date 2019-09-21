@@ -2,7 +2,6 @@ $().ready(function () {
 
     var cartasViradas = [];
 
-    //var imagens = ['1', '2', '3', '4', '5', '6'];
     var imagens = [];
     var tempImagens = [];
 
@@ -28,11 +27,6 @@ $().ready(function () {
     var returnStage = false;
 
     var acertos = 0;
-
-    /*$('.carta_back').each(function (i, obj) {
-        $(this).attr("src", `img/${imagens[i]}.png`);
-        console.log(`Carta ${i + 1}: anexada imagem ${imagens[i]}.png`);
-    });*/
 
     $(".card").on('flip:done', function () {
         if (!gameStarted) {
@@ -122,96 +116,26 @@ $().ready(function () {
                 duration: "400"
             }
         });
-        for (i = 0; i < 3; i++) {
+
+        setTimeout(() => {
             setTimeout(() => {
-                $(`#card${getRandomInt(1, 12)}`).flip("toggle");
+                $("#reloading").dialog();
                 setTimeout(() => {
-                    $(`#card${getRandomInt(1, 12)}`).flip("toggle");
-                    setTimeout(() => {
-                        $(`#card${getRandomInt(1, 12)}`).flip("toggle");
-                        setTimeout(() => {
-                            $(`#card${getRandomInt(1, 12)}`).flip("toggle");
-                            setTimeout(() => {
-                                $(`#card${getRandomInt(1, 12)}`).flip("toggle");
-                                setTimeout(() => {
-                                    $(`#card${getRandomInt(1, 12)}`).flip("toggle");
-                                    setTimeout(() => {
-                                        $(`#card${getRandomInt(1, 12)}`).flip("toggle");
-                                        setTimeout(() => {
-                                            $(`#card${getRandomInt(1, 12)}`).flip("toggle");
-                                            setTimeout(() => {
-                                                $(`#card${getRandomInt(1, 12)}`).flip("toggle");
-                                                setTimeout(() => {
-                                                    $(`#card${getRandomInt(1, 12)}`).flip("toggle");
-                                                    setTimeout(() => {
-                                                        $(`#card${getRandomInt(1, 12)}`).flip("toggle");
-                                                        setTimeout(() => {
-                                                            $(`#card${getRandomInt(1, 12)}`).flip("toggle");
-                                                            setTimeout(() => {
-                                                                $(`#card${getRandomInt(1, 12)}`).flip("toggle");
-                                                                setTimeout(() => {
-                                                                    $(`#card${getRandomInt(1, 12)}`).flip("toggle");
-                                                                    setTimeout(() => {
-                                                                        $(`#card${getRandomInt(1, 12)}`).flip("toggle");
-                                                                        setTimeout(() => {
-                                                                            $(`#card${getRandomInt(1, 12)}`).flip("toggle");
-                                                                            setTimeout(() => {
-                                                                                $(`#card${getRandomInt(1, 12)}`).flip("toggle");
-                                                                                setTimeout(() => {
-                                                                                    $(`#card${getRandomInt(1, 12)}`).flip("toggle");
-                                                                                    setTimeout(() => {
-                                                                                        $(`#card${getRandomInt(1, 12)}`).flip("toggle");
-                                                                                        $(".card").each(function (i, obj) {
-                                                                                            $(this).flip(false);
-                                                                                        });
-                                                                                        setTimeout(() => {
-                                                                                            $("#reloading").dialog();
-                                                                                            setTimeout(() => {
-                                                                                                location.reload();
-                                                                                            }, 2000);
-                                                                                        }, 500);
-                                                                                    }, 400);
-                                                                                }, 400);
-                                                                            }, 400);
-                                                                        }, 400);
-                                                                    }, 400);
-                                                                }, 400);
-                                                            }, 400);
-                                                        }, 400);
-                                                    }, 400);
-                                                }, 400);
-                                            }, 400);
-                                        }, 400);
-                                    }, 400);
-                                }, 400);
-                            }, 400);
-                        }, 400);
-                    }, 400);
-                }, 400);
-            }, 400);
-        }
+                    location.reload();
+                }, 2000);
+            }, 500);
+        }, 1000)
 
     }
 
-    function getRandomInt(min, max) {
-        min = Math.ceil(min);
-        max = Math.floor(max);
-        return Math.floor(Math.random() * (max - min + 1)) + min;
-    }
-
-    // Fisher-Yates shuffle
     function shuffle(array) {
         var currentIndex = array.length,
             temporaryValue, randomIndex;
 
-        // While there remain elements to shuffle...
         while (0 !== currentIndex) {
-
-            // Pick a remaining element...
             randomIndex = Math.floor(Math.random() * currentIndex);
             currentIndex -= 1;
 
-            // And swap it with the current element.
             temporaryValue = array[currentIndex];
             array[currentIndex] = array[randomIndex];
             array[randomIndex] = temporaryValue;
